@@ -1,0 +1,11 @@
+import rodados.*
+import pedido.*
+
+test "Nuevo Pedido" {
+	var corsa = new Corsa(color = "rojo")
+	var pedido1 = new Pedido(tiempoMaximo = 9 , distanciaARecorrer = 900 , capacidadDePasajeros = 4
+							,coloresIncompatibles = ["rojo"])
+	
+	assert.that(not pedido1.puedeSatisfacerPedido(corsa))
+	
+}

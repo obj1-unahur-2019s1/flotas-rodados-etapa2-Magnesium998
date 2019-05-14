@@ -8,7 +8,11 @@ describe "Flota de rodados" {
 		const cultura = new Dependencia(empleados = 31)
 		cultura.agregarAFlota(cachito)
 		
-		// completar
+		cultura.agregarAFlota(new Kwid(tieneTanqueAdicional = true))
+		cultura.agregarAFlota(new Kwid(tieneTanqueAdicional = true))
+		cultura.agregarAFlota(new Kwid(tieneTanqueAdicional = false))
+		trafic.motor(motorBataton) ; trafic.interior(interiorPopular)
+		cultura.agregarAFlota(trafic)
 	}
 	
 	test "Dependencia deportes" {
