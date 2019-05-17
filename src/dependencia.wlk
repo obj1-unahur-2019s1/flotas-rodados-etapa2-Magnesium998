@@ -2,7 +2,8 @@ import rodados.*
 
 class Dependencia {
 	const flota = #{}
-	var property empleados = 0
+	var property empleados
+	const pedidos = #{}
 	
 	method agregarAFlota(rodado) {
 		flota.add(rodado)
@@ -38,5 +39,17 @@ class Dependencia {
 	
 	method esGrande() {
 		return empleados >= 40 and flota.size() >= 5
+	}
+	
+	method agregarPedido(pedido) {pedidos.add(pedido)}
+	
+	method quitarPedido(pedido) {pedidos.remove(pedido)}
+	
+	method noPuedeSatisfacer(pedido) {return 
+		pedidos.filter{p => not self.puedeSatisfacer(p)}
+	}
+	
+	method puedeSatisfacer(pedido) {return
+		flota.any{f => pedido.puedeSatisfacerPedido(f)}
 	}
 }

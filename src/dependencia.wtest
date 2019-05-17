@@ -1,0 +1,12 @@
+import rodados.*
+import pedido.*
+import dependencia.*
+
+test "Pedidos satisfechos y no" {
+	var corsa = new Corsa(color = "Negro")
+	var pedido1 = new Pedido(distanciaARecorrer = 1000,tiempoMaximo = 10,capacidadDePasajeros = 4)
+    var satisfaccion = new Dependencia(empleados = 40)
+    
+    //assert.that(satisfaccion.noPuedeSatisfacer(pedido1))
+    assert.that(not satisfaccion.puedeSatisfacer(pedido1))
+}
